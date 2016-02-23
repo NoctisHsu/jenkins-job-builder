@@ -13,5 +13,9 @@
   "license": "ISC",
   "devDependencies": {
     "request": "^2.69.0"
+  },
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/NoctisHsu/jenkins-job-builder.git"
   }
 }
