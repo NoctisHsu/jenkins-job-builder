@@ -12,10 +12,11 @@
   "author": "Noctis Hsu <noctishsu@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "request": "^2.69.0"
+    "pace": "^0.0.4",
+    "request-promise":"^2.0.1"
   },
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/NoctisHsu/jenkins-job-builder.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NoctisHsu/jenkins-job-builder.git"
   }
 }
