@@ -1,7 +1,7 @@
 {
   "name": "jenkins-job-builder",
-  "version": "1.0.1",
-  "description": "Build jenkins job with npm without jenkins website!",
+  "version": "1.0.2",
+  "description": "Build jenkins job without jenkins website!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
