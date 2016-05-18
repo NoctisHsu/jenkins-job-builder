@@ -1,6 +1,6 @@
 {
   "name": "jenkins-job-builder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Build jenkins job without jenkins website!",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "pace": "^0.0.4",
-    "request-promise":"^2.0.1"
+    "request-promise": "^2.0.1"
   },
   "repository": {
     "type": "git",
