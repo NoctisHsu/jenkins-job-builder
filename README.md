@@ -12,7 +12,10 @@ var jenkinsUrl = 'http://jenkins.dev:8080';
 //ci static file sync task
 gulp.task('ci-static', function () {
 var jobName = 'NineYi.Scm.StaticFile';
-jenkensJobBuilder.SendJenkinsRequest(jenkinsUrl,jobName,2000, 18);
+jenkensJobBuilder.SendJenkinsRequest(jenkinsUrl,jobName);
 });
+
 ```
 ```
+
+![Imgur](http://i.imgur.com/Xdq59Ya.png)
