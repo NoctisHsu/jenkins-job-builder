@@ -16,6 +16,4 @@ jenkensJobBuilder.SendJenkinsRequest(jenkinsUrl,jobName);
 });
 
 ```
-```
-
 ![Imgur](http://i.imgur.com/Xdq59Ya.png)
