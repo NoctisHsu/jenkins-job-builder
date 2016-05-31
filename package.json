@@ -11,6 +11,7 @@
   ],
   "author": "Noctis Hsu <noctishsu@gmail.com>",
   "license": "ISC",
+  "readmeFilename": "README.md",
   "devDependencies": {
     "chai": "^3.5.0",
     "jasmine": "^2.4.1",
