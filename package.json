@@ -1,6 +1,6 @@
 {
   "name": "jenkins-job-builder",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Build jenkins job without jenkins website!",
   "main": "index.js",
   "scripts": {
