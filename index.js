@@ -42,8 +42,9 @@ exports.SendJenkinsRequest = function (jenkinsUrl, jobName) {
                             else{
                                 if (json["executor"] == null && json["building"] == false) {
                                     pa.op(total);
-                                    console.log('\nBuild Job Success');
                                     clearInterval(timer);
+                                    var executeResult = json['result']==='SUCCESS'? 'Build Job Success':'Build Job Failed';
+                                    console.log('\n'+executeResult);
                                 }
                                 else {
                                     if (json["executor"] && json["executor"]["progress"]) {
