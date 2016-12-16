@@ -7,7 +7,6 @@ exports.SendJenkinsRequest = function (jenkinsUrl, jobName) {
         pa = pace(total);
     var timer;
     var lastbuildNumber;
-
     console.log('Send Job "' + jobName + '" to build.');
     rp(jenkinsUrl + '/job/' + jobName + '/api/json').then(function (res) {
         var cleaned = res.trim();
@@ -37,6 +36,8 @@ exports.SendJenkinsRequest = function (jenkinsUrl, jobName) {
                             if(lastbuildNumber==json["number"] )
                             {
                                 console.log('...');
+                                console.clear();
+                                console.log(msg);
                             }
                             else{
                                 if (json["executor"] == null && json["building"] == false) {
