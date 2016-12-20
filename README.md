@@ -1,5 +1,5 @@
 # jenkins-job-builder
-Build jenkins job with npm without jenkins website!
+Build jenkins job without jenkins website!
 
 simple example：
 
