@@ -27,17 +27,16 @@ exports.SendJenkinsRequest = function (jenkinsUrl, jobName) {
         rp(jenkinsUrl + '/job/' + jobName + '/build')
             .then(function () {
                 console.log('Please wait, process of executing can take some time!');
+                var dots = ''
                 timer = setInterval(function () {
                     if (count <= total) {
                         rp(jenkinsUrl + '/job/' + jobName + '/lastBuild/api/json?depth=1').then(function (res) {
                             var cleaned = res.trim();
                             var json = JSON.parse(cleaned);
-
                             if(lastbuildNumber==json["number"] )
                             {
-                                console.log('...');
-                                console.clear();
-                                console.log(msg);
+                                dots += '...'
+                                console.log(`\r ${dots}`);
                             }
                             else{
                                 if (json["executor"] == null && json["building"] == false) {
