@@ -1,13 +1,13 @@
 {
   "name": "jenkins-job-builder",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Build jenkins job without jenkins website!",
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha"
   },
   "keywords": [
-    "jenkins"
+    "jenkins,gulp"
   ],
   "author": "Noctis Hsu <noctishsu@gmail.com>",
   "license": "ISC",
