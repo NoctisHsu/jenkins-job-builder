@@ -1,5 +1,6 @@
 var rp = require('request-promise');
 var pace = require('pace');
+var spinner = require('text-spinner')({ interval: 50 });
 
 exports.SendJenkinsRequest = function (jenkinsUrl, jobName) {
     var total = 100,
@@ -14,8 +15,7 @@ exports.SendJenkinsRequest = function (jenkinsUrl, jobName) {
         lastbuildNumber = json["lastBuild"]["number"];
         if (!json["inQueue"] && !CheckIsBuilding()) {
             SendBuildTrigger();
-        }
-        else {
+        } else {
             console.log('Same Job is building.');
         }
     }).catch(function () {
@@ -27,25 +27,20 @@ exports.SendJenkinsRequest = function (jenkinsUrl, jobName) {
         rp(jenkinsUrl + '/job/' + jobName + '/build')
             .then(function () {
                 console.log('Please wait, process of executing can take some time!');
-                var dots = ''
                 timer = setInterval(function () {
                     if (count <= total) {
                         rp(jenkinsUrl + '/job/' + jobName + '/lastBuild/api/json?depth=1').then(function (res) {
                             var cleaned = res.trim();
                             var json = JSON.parse(cleaned);
-                            if(lastbuildNumber==json["number"] )
-                            {
-                                dots += '...'
-                                console.log(`\r ${dots}`);
-                            }
-                            else{
+                            if (lastbuildNumber == json["number"]) {
+                                spinner.spin();
+                            } else {
                                 if (json["executor"] == null && json["building"] == false) {
-                                    pa.op(total);
+
                                     clearInterval(timer);
-                                    var executeResult = json['result']==='SUCCESS'? 'Build Job Success':'Build Job Failed';
-                                    console.log('\n'+executeResult);
-                                }
-                                else {
+                                    var executeResult = json['result'] === 'SUCCESS' ? 'Build Job Success' : 'Build Job Failed';
+                                    console.log('\n' + executeResult);
+                                } else {
                                     if (json["executor"] && json["executor"]["progress"]) {
                                         count = json["executor"]["progress"];
                                         pa.op(count);
@@ -70,3 +65,4 @@ exports.SendJenkinsRequest = function (jenkinsUrl, jobName) {
         });
     }
 };
+

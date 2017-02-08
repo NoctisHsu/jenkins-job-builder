@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "pace": "^0.0.4",
-    "request-promise": "^2.0.1"
+    "request-promise": "^2.0.1",
+    "text-spinner": "0.0.4"
   },
   "repository": {
     "type": "git",
