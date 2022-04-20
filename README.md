@@ -3,17 +3,29 @@ Build jenkins job without jenkins website!
 
 simple example：
 
-open gulpfile.js 
-than add:
-```javascript
-var jenkensJobBuilder = require('jenkins-job-builder');
-var jenkinsUrl = 'http://jenkins.dev:8080';
+### Basic Usage
 
-//ci static file sync task
-gulp.task('ci-static', function () {
-var jobName = 'NineYi.Scm.StaticFile';
-jenkensJobBuilder.SendJenkinsRequest(jenkinsUrl,jobName);
-});
+  ```javascript
+  const jenkensJobBuilder = require('jenkins-job-builder');
+  const jenkinsUrl = 'http://jenkins.dev:8080';
+  const jobName = 'NineYi.Scm.StaticFile';
+  jenkensJobBuilder.SendJenkinsRequest(jenkinsUrl,jobName);
+  ```
 
-```
+### Use with Gulp
+1. open gulpfile.js 
+2. add gulp task
+
+  ```javascript
+  const jenkensJobBuilder = require('jenkins-job-builder');
+  const jenkinsUrl = 'http://jenkins.dev:8080';
+
+  //ci static file sync task
+  gulp.task('ci-static', function () {
+  const jobName = 'NineYi.Scm.StaticFile';
+  jenkensJobBuilder.SendJenkinsRequest(jenkinsUrl,jobName);
+  });
+  ```
+  
+### Execution screenshot
 ![Imgur](http://i.imgur.com/Xdq59Ya.png)
